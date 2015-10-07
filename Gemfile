@@ -12,6 +12,8 @@ gem 'mysql2'
 group :test do
   gem 'minitest'
   gem 'capybara'
+  gem 'coveralls'
+  gem 'simplecov'
 end
 
 group :production do
