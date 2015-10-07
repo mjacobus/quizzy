@@ -1,6 +1,8 @@
 Quizzy
 ----------------------
 
+Create your quizzes and share them with the world!
+
 [![Build Status](https://travis-ci.org/mjacobus/quizzy.svg)](https://travis-ci.org/mjacobus/quizzy)
 [![Coverage Status](https://coveralls.io/repos/mjacobus/quizzy/badge.svg?branch=master&service=github)](https://coveralls.io/github/mjacobus/quizzy?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/mjacobus/quizzy/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mjacobus/quizzy/?branch=master)
