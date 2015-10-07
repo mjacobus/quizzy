@@ -3,7 +3,9 @@ Quizzy
 
 [![Build Status](https://travis-ci.org/mjacobus/quizzy.svg)](https://travis-ci.org/mjacobus/quizzy)
 [![Coverage Status](https://coveralls.io/repos/mjacobus/quizzy/badge.svg?branch=master&service=github)](https://coveralls.io/github/mjacobus/quizzy?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/mjacobus/quizzy/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mjacobus/quizzy/?branch=master)
 [![Code Climate](https://codeclimate.com/github/mjacobus/quizzy/badges/gpa.svg)](https://codeclimate.com/github/mjacobus/quizzy)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mjacobus/quizzy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mjacobus/quizzy/?branch=master)
 [![Dependency Status](https://gemnasium.com/mjacobus/quizzy.svg)](https://gemnasium.com/mjacobus/quizzy)
 
 ## Features
