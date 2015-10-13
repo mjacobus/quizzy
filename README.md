@@ -14,6 +14,10 @@ Create your quizzes and share them with the world!
 
 - As an user I want to create quizzes
 - A quiz can be public or private
+- A quiz has:
+  - owner
+  - description
+  - public/private flag
 - For every quiz I want to create items
 - A quiz item has
   - hint [optional]
