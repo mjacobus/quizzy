@@ -72,6 +72,8 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    scrutinizer-ocular (1.0.1)
+      simplecov (>= 0.7)
     sequel (4.27.0)
     shotgun (0.9.1)
       rack (>= 1.0)
@@ -105,4 +107,8 @@ DEPENDENCIES
   minitest
   mysql2
   rake
+  scrutinizer-ocular
   simplecov
+
+BUNDLED WITH
+   1.10.6

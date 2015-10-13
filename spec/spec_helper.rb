@@ -6,6 +6,11 @@ if ENV['COVERALLS']
   Coveralls.wear!
 end
 
+if ENV['SCRUTINIZER']
+  require "scrutinizer/ocular"
+  Scrutinizer::Ocular.watch!
+end
+
 if ENV['COVERAGE']
   require 'simplecov'
 

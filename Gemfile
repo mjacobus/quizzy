@@ -14,6 +14,7 @@ group :test do
   gem 'capybara'
   gem 'coveralls'
   gem 'simplecov'
+  gem "scrutinizer-ocular"
 end
 
 group :production do
