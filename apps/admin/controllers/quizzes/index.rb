@@ -12,8 +12,13 @@ module Admin::Controllers::Quizzes
     private
 
     def repository
-      dependencies = ApplicationDependencies.instance
       dependencies.fetch(Quizzy::Repositories::QuizRepository)
+    end
+
+    # TODO: move to base action
+    # TODO: figure out how to inject dependency rather than using singleton
+    def dependencies
+      Application::Dependencies.instance
     end
 
     def create_quizzes(repository)

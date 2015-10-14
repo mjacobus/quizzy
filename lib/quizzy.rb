@@ -58,7 +58,7 @@ Lotus::Mailer.configure do
   end
 end.load!
 
-require_relative "application_dependencies"
 
-# TODO: Find a way of injecting this into the controllers
-ApplicationDependencies.instance
+lib = File.expand_path('..', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "application/dependencies"
