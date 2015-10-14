@@ -4,15 +4,16 @@ module Admin::Controllers::Quizzes
     expose :quizzes
 
     def call(params)
-      @quizzes = repository.all
+      @quizzes = service.all
 
-      create_quizzes(repository) if @quizzes.size == 0
+      # TODO: Use seeds instead
+      create_quizzes if @quizzes.size == 0
     end
 
     private
 
-    def repository
-      dependencies.fetch(Quizzy::Repositories::QuizRepository)
+    def service
+      dependencies.fetch(Quizzy::Services::QuizService)
     end
 
     # TODO: move to base action
@@ -21,7 +22,7 @@ module Admin::Controllers::Quizzes
       Application::Dependencies.instance
     end
 
-    def create_quizzes(repository)
+    def create_quizzes
       (1..10).each do |number|
         quiz = ::Quizzy::Entities::Quiz.new
         quiz.title = "title #{number}"
@@ -30,7 +31,7 @@ module Admin::Controllers::Quizzes
         quiz.created_at = Time.now
         quiz.created_at = Time.now
 
-        repository.create(quiz)
+        service.create(quiz)
       end
     end
   end
