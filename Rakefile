@@ -1,20 +1,25 @@
-require 'rake'
-require 'rake/testtask'
+require "rake"
+require "rake/testtask"
 
 Rake::TestTask.new do |t|
-  t.pattern = 'spec/**/*_spec.rb'
-  t.libs    << 'spec'
+  t.pattern = "spec/**/*_spec.rb"
+  t.libs    << "spec"
 end
 
 namespace :test do
   task :coveralls do
-    ENV['COVERALLS'] = 'true'
-    Rake::Task['test:coverage'].invoke
+    ENV["COVERALLS"] = "true"
+    Rake::Task["test:coverage"].invoke
   end
 
   task :coverage do
-    ENV['COVERAGE'] = 'true'
-    Rake::Task['test'].invoke
+    ENV["COVERAGE"] = "true"
+    Rake::Task["test"].invoke
+  end
+
+  task :scrutinizer do
+    ENV["SCRUTINIZER"] = "true"
+    Rake::Task["test"].invoke
   end
 end
 

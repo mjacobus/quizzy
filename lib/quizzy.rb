@@ -1,3 +1,4 @@
+require "koine/repository"
 require 'lotus/model'
 require 'lotus/mailer'
 Dir["#{ __dir__ }/quizzy/**/*.rb"].each { |file| require_relative file }
@@ -56,3 +57,8 @@ Lotus::Mailer.configure do
     # production :stmp, address: ENV['SMTP_PORT'], port: 1025
   end
 end.load!
+
+
+lib = File.expand_path('..', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "application/dependencies"
