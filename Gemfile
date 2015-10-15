@@ -26,6 +26,7 @@ group :test do
   gem "coveralls"
   gem "simplecov"
   gem "scrutinizer-ocular"
+  gem "mocha"
 end
 
 group :production do

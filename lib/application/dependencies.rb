@@ -21,6 +21,16 @@ module Application
         require "application/factories/quiz_service_factory"
         Application::Factories::QuizServiceFactory.new.create_service(di)
       end
+
+      define("Quizzy::User::UserRepository") do |di|
+        require "application/factories/user_repository_factory"
+        Application::Factories::UserRepositoryFactory.new.create_service(di)
+      end
+
+      define("Quizzy::User::UserService") do |di|
+        require "application/factories/user_service_factory"
+        Application::Factories::UserServiceFactory.new.create_service(di)
+      end
     end
   end
 end
