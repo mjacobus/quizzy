@@ -4,3 +4,6 @@
 get "/auth/:provider/callback",
   to: "session#create_google_session",
   as: :session_create_google_session
+
+get "/auth/failure", to: "auth#failure"
+get "/auth/signout", to: "auth#signout"
