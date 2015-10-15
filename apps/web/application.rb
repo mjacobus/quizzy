@@ -73,11 +73,24 @@ module Web
       #
       # See: http://www.rubydoc.info/gems/rack/Rack/Session/Cookie
       #
-      # sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
+      sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
 
       # Configure Rack middleware for this application
       #
       # middleware.use Rack::Protection
+
+      require 'omniauth'
+      require 'omniauth-oauth2'
+      # require 'omniauth-facebook'
+      require 'omniauth-google_oauth2'
+      # require 'omniauth-github'
+      # require 'omniauth-twitter'
+
+      # kudos to https://github.com/krasnoukhov/gospotify/blob/master/app/controllers/auth.rb
+      # middleware.use use Rack::Session::Cookie, secret: ENV['WEB_SESSIONS_SECRET']
+      middleware.use ::OmniAuth::Builder do
+        provider OmniAuth::Strategies::GoogleOAuth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+      end
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, default to :html

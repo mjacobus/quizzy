@@ -28,5 +28,8 @@ end
 
 require_relative "../config/environment"
 require "minitest/autorun"
+require 'minitest/unit'
+require 'mocha/mini_test'
 
 Lotus::Application.preload!
+
