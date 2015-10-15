@@ -13,6 +13,13 @@ gem "koine-command_bus"
 gem "koine-event_manager"
 gem "nurse-rb"
 
+gem "omniauth"
+gem "omniauth-oauth2"
+gem "omniauth-facebook"
+gem "omniauth-google_oauth2"
+gem "omniauth-github"
+gem "omniauth-twitter"
+
 group :test do
   gem "minitest"
   gem "capybara"
