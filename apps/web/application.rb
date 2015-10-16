@@ -1,6 +1,17 @@
 require 'lotus/helpers'
 
 module Web
+
+  # TODO: Figure out why I had to create the following modules
+  module Views
+    module Admin
+    end
+  end
+  module Controllers
+    module Admin
+    end
+  end
+
   class Application < Lotus::Application
     configure do
       ##

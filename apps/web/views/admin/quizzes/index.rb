@@ -1,4 +1,4 @@
-module Web::Views::Quizzes
+module Web::Views::Admin::Quizzes
   class Index
     include Web::View
 

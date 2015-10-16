@@ -1,8 +1,8 @@
 # Configure your routes here
 # See: http://www.rubydoc.info/gems/lotus-router/#Usage
 #
-get '/admin/quizzes', to: 'quizzes#index', as: :quizzes
-get '/admin/quizzes/show', to: 'quizzes#show'
+get '/admin/quizzes', to: 'admin/quizzes#index', as: :quizzes
+get '/admin/quizzes/show', to: 'admin/quizzes#show'
 
 get "/auth/:provider/callback",
   to: "session#create_google_session",

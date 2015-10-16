@@ -1,4 +1,4 @@
-module Web::Controllers::Quizzes
+module Web::Controllers::Admin::Quizzes
   class Index
     include Web::Action
     expose :quizzes
