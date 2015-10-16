@@ -1,6 +1,6 @@
 require 'lotus/helpers'
 
-module Web
+module Admin
   class Application < Lotus::Application
     configure do
       ##
@@ -73,24 +73,11 @@ module Web
       #
       # See: http://www.rubydoc.info/gems/rack/Rack/Session/Cookie
       #
-      sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
+      # sessions :cookie, secret: ENV['ADMIN_SESSIONS_SECRET']
 
       # Configure Rack middleware for this application
       #
       # middleware.use Rack::Protection
-
-      require 'omniauth'
-      require 'omniauth-oauth2'
-      # require 'omniauth-facebook'
-      require 'omniauth-google_oauth2'
-      # require 'omniauth-github'
-      # require 'omniauth-twitter'
-
-      # kudos to https://github.com/krasnoukhov/gospotify/blob/master/app/controllers/auth.rb
-      # middleware.use use Rack::Session::Cookie, secret: ENV['WEB_SESSIONS_SECRET']
-      middleware.use ::OmniAuth::Builder do
-        provider OmniAuth::Strategies::GoogleOAuth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
-      end
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, default to :html
@@ -120,7 +107,7 @@ module Web
 
       # The layout to be used by all views
       #
-      layout :application # It will load Web::Views::ApplicationLayout
+      layout :application # It will load Admin::Views::ApplicationLayout
 
       # The relative path to templates
       #
@@ -196,7 +183,7 @@ module Web
       # FRAMEWORKS
       #
 
-      # Configure the code that will yield each time Web::Action is included
+      # Configure the code that will yield each time Admin::Action is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/lotus-controller#Configuration
@@ -205,7 +192,7 @@ module Web
         # before :authenticate!    # run an authentication before callback
       end
 
-      # Configure the code that will yield each time Web::View is included
+      # Configure the code that will yield each time Admin::View is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/lotus-view#Configuration
