@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Quizzy::Quiz::Quiz do
   subject { Quizzy::Quiz::Quiz.new }

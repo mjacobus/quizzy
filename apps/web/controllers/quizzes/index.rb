@@ -28,8 +28,8 @@ module Web::Controllers::Quizzes
         quiz.title = "title #{number}"
         quiz.description = "description #{number}"
         quiz.private = true
-        quiz.created_at = Time.now
-        quiz.created_at = Time.now
+        quiz.created_at = Time.now.utc
+        quiz.created_at = Time.now.utc
 
         service.create(quiz)
       end

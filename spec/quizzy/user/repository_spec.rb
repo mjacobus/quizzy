@@ -15,8 +15,8 @@ module Quizzy::User
           entity.provider = "google"
           entity.name = "Foo Bar"
           entity.email = "some@email.com"
-          entity.created_at = Time.now
-          entity.updated_at = Time.now
+          entity.created_at = Time.now.utc
+          entity.updated_at = Time.now.utc
           entity.provider_data = {}.to_json
 
           repository.create(entity)
@@ -27,10 +27,11 @@ module Quizzy::User
           entity.uid.must_equal reloaded.uid
           entity.provider.must_equal reloaded.provider
           entity.name.must_equal reloaded.name
-          entity.created_at.to_s.must_equal reloaded.created_at.to_s
-          entity.updated_at.to_s.must_equal reloaded.updated_at.to_s
           entity.email.must_equal reloaded.email
           entity.provider_data.must_equal reloaded.provider_data
+
+          entity.created_at.to_s.must_equal Time.now.utc.to_s
+          entity.updated_at.to_s.must_equal Time.now.utc.to_s
         end
       end
     end

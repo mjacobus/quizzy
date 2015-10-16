@@ -20,8 +20,8 @@ module Quizzy
         user.uid           = oauth.uid
         user.name          = oauth.name
         user.email         = oauth.email
-        user.created_at    = Time.new
-        user.updated_at    = Time.new
+        user.created_at    = Time.new.utc
+        user.updated_at    = Time.new.utc
 
         repository.create(user)
 

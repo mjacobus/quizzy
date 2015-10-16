@@ -37,7 +37,7 @@ module Quizzy::User
           with(uid: "123", provider: "google").returns(nil)
 
         repository.expects(:create).with(user) do |value|
-         value.is_a?(User)
+          value.is_a?(User)
         end
 
         created_user = service.find_or_create_by_oauth(oauth)
@@ -47,8 +47,8 @@ module Quizzy::User
         created_user.provider_data.must_equal data[:provider_data]
         created_user.name.must_equal data[:name]
         created_user.email.must_equal data[:email]
-        created_user.created_at.to_s.must_equal Time.now.to_s
-        created_user.updated_at.to_s.must_equal Time.now.to_s
+        created_user.created_at.to_s.must_equal Time.now.utc.to_s
+        created_user.updated_at.to_s.must_equal Time.now.utc.to_s
       end
     end
   end

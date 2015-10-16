@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Quizzy::Quiz::QuizRepository do
   let(:repository) { Quizzy::Quiz::QuizRepository.new(stub) }

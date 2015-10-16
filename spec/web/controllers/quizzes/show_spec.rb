@@ -1,5 +1,5 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/controllers/quizzes/show'
+require "spec_helper"
+require_relative "../../../../apps/web/controllers/quizzes/show"
 
 describe Web::Controllers::Quizzes::Show do
   let(:action) { Web::Controllers::Quizzes::Show.new }
