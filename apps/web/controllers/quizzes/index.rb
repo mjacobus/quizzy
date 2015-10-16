@@ -1,6 +1,6 @@
-module Admin::Controllers::Quizzes
+module Web::Controllers::Quizzes
   class Index
-    include Admin::Action
+    include Web::Action
     expose :quizzes
 
     def call(params)
