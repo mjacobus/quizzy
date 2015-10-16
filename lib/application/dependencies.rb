@@ -11,17 +11,44 @@ module Application
         Sequel.connect ENV["QUIZZY_DATABASE_URL"]
       end
 
-      define("Quizzy::Repositories::QuizRepository") do |di|
+
+      initialize_app_auth_module
+      initialize_quiz_module
+      initialize_user_module
+    end
+
+    private
+
+    #
+    # Application::Auth module
+    #
+    def initialize_app_auth_module
+      define("Application::Auth::SessionLoginService") do |di|
+        require "application/factories/session_login_service_factory"
+        Application::Factories::SessionLoginServiceFactory.new.create_service(di)
+      end
+    end
+
+    #
+    # Quizzy::Quiz module
+    #
+    def initialize_quiz_module
+      define("Quizzy::Quiz::QuizRepository") do |di|
         # testable factory
         require "application/factories/quiz_repository_factory"
         Application::Factories::QuizRepositoryFactory.new.create_service(di)
       end
 
-      define("Quizzy::Services::QuizService") do |di|
+      define("Quizzy::Quiz::QuizService") do |di|
         require "application/factories/quiz_service_factory"
         Application::Factories::QuizServiceFactory.new.create_service(di)
       end
+    end
 
+    #
+    # Quizzy::User module
+    #
+    def initialize_user_module
       define("Quizzy::User::UserRepository") do |di|
         require "application/factories/user_repository_factory"
         Application::Factories::UserRepositoryFactory.new.create_service(di)
@@ -30,11 +57,6 @@ module Application
       define("Quizzy::User::UserService") do |di|
         require "application/factories/user_service_factory"
         Application::Factories::UserServiceFactory.new.create_service(di)
-      end
-
-      define("Application::Auth::SessionLoginService") do |di|
-        require "application/factories/session_login_service_factory"
-        Application::Factories::SessionLoginServiceFactory.new.create_service(di)
       end
     end
   end

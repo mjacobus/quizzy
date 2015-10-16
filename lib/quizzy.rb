@@ -1,6 +1,6 @@
 require "koine/repository"
 require 'lotus/model'
-require 'lotus/mailer'
+# require 'lotus/mailer'
 Dir["#{ __dir__ }/quizzy/**/*.rb"].each { |file| require_relative file }
 
 Lotus::Model.configure do
@@ -47,16 +47,16 @@ Lotus::Model.configure do
   end
 end.load!
 
-Lotus::Mailer.configure do
-  root "#{ __dir__ }/quizzy/mailers"
-
-  # See http://lotusrb.org/guides/mailers/delivery
-  delivery do
-    development :test
-    test        :test
-    # production :stmp, address: ENV['SMTP_PORT'], port: 1025
-  end
-end.load!
+# Lotus::Mailer.configure do
+#   root "#{ __dir__ }/quizzy/mailers"
+#
+#   # See http://lotusrb.org/guides/mailers/delivery
+#   delivery do
+#     development :test
+#     test        :test
+#     # production :stmp, address: ENV['SMTP_PORT'], port: 1025
+#   end
+# end.load!
 
 
 lib = File.expand_path('..', __FILE__)

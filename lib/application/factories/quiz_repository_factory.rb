@@ -6,9 +6,9 @@ module Application
           dependencies.get(:db_connection),
           :quizzes
         )
-        repository = Quizzy::Repositories::QuizRepository.new(adapter)
+        repository = Quizzy::Quiz::QuizRepository.new(adapter)
         repository.hydrator         = Koine::Hydrator::Hydrator.new
-        repository.entity_prototype = Quizzy::Entities::Quiz.new
+        repository.entity_prototype = Quizzy::Quiz::Quiz.new
         repository
       end
     end

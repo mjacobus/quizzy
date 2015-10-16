@@ -1,5 +1,5 @@
 module Quizzy
-  module Entities
+  module Quiz
     class Quiz
       attr_accessor :id
       attr_accessor :title

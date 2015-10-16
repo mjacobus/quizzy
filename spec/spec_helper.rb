@@ -18,11 +18,7 @@ if ENV["COVERAGE"]
     add_filter "/spec/"
     add_group "Lib", "lib"
     add_group "Quizzy", "lib/quizzy"
-    add_group "Apps", "apps"
     add_group "Web", "apps/web"
-    add_group "Admin", "apps/admin"
-    add_group "Entities", "lib/quizzy/entities"
-    add_group "Repositories", "lib/quizzy/repositories"
   end
 end
 

@@ -1,9 +1,8 @@
 require "spec_helper"
-require "quizzy/services/quiz_service"
 
-describe Quizzy::Services::QuizService do
+describe Quizzy::Quiz::QuizService do
   let(:repository) { Minitest::Mock.new }
-  let(:service) { Quizzy::Services::QuizService.new(repository) }
+  let(:service) { Quizzy::Quiz::QuizService.new(repository) }
 
   describe "#all" do
     it "returns all records" do

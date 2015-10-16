@@ -13,7 +13,7 @@ module Web::Controllers::Quizzes
     private
 
     def service
-      dependencies.fetch(Quizzy::Services::QuizService)
+      dependencies.fetch(Quizzy::Quiz::QuizService)
     end
 
     # TODO: move to base action
@@ -24,7 +24,7 @@ module Web::Controllers::Quizzes
 
     def create_quizzes
       (1..10).each do |number|
-        quiz = ::Quizzy::Entities::Quiz.new
+        quiz = ::Quizzy::Quiz::Quiz.new
         quiz.title = "title #{number}"
         quiz.description = "description #{number}"
         quiz.private = true
