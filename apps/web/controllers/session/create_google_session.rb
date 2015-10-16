@@ -8,10 +8,9 @@ module Web::Controllers::Session
 
       login_service.login(user)
 
-      url = oauth.origin
-      # TODO: Use routes to build url
-      url ||= '/admin/quizzes'
+      flash[:notice] = "Welcome #{user.name}!"
 
+      url = oauth.origin || routes.admin_quizzes_url
       redirect_to url
     end
 
