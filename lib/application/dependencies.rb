@@ -31,6 +31,11 @@ module Application
         require "application/factories/user_service_factory"
         Application::Factories::UserServiceFactory.new.create_service(di)
       end
+
+      define("Application::Auth::SessionLoginService") do |di|
+        require "application/factories/session_login_service_factory"
+        Application::Factories::SessionLoginServiceFactory.new.create_service(di)
+      end
     end
   end
 end

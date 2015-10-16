@@ -4,7 +4,7 @@ require "quizzy/user/user"
 
 module Quizzy::User
   describe UserService do
-    let(:repository) { Minitest::Mock.new }
+    let(:repository) { stub }
     let(:service) { UserService.new(repository) }
 
     describe "#find_or_create_by_oauth" do
@@ -12,7 +12,7 @@ module Quizzy::User
       it "returns the user" do
         user = User.new
         oauth = mock(uid: "123", provider: "google")
-        repository.expect(:find_one_by, user, [{ uid: "123", provider: "google" }])
+        repository.expects(:find_one_by).with({ uid: "123", provider: "google" }).returns(user)
 
         returned = service.find_or_create_by_oauth(oauth)
 
@@ -33,8 +33,12 @@ module Quizzy::User
 
         oauth = stub(data)
 
-        repository.expect(:find_one_by, nil, [{ uid: "123", provider: "google" }])
-        repository.expect(:create, nil, [user])
+        repository.expects(:find_one_by).
+          with(uid: "123", provider: "google").returns(nil)
+
+        repository.expects(:create).with(user) do |value|
+         value.is_a?(User)
+        end
 
         created_user = service.find_or_create_by_oauth(oauth)
 

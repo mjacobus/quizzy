@@ -4,10 +4,10 @@ OmniAuth.config.mock_auth = {}
 # twitter
 ################################################################################
 OmniAuth.config.mock_auth[:twitter] = {
-  :provider => 'twitter',
-  :uid => '123456',
-  :info => {
-    :name => 'Example Name'
+  provider: "twitter",
+  uid:      "123456",
+  info:     {
+    name: "Example Name"
   }
 }
 
@@ -15,13 +15,13 @@ OmniAuth.config.mock_auth[:twitter] = {
 # google
 ################################################################################
 OmniAuth.config.mock_auth[:google_oauth2] = {
-  :provider => 'google_oauth2',
-  :uid => '223456',
-  :info => {
-    :name => 'Example Name',
-    :email => "email@google.com",
-    :first_name => "Marcelo",
-    :last_name => "Jacobus"
+  provider: "google_oauth2",
+  uid:      "223456",
+  info: {
+    name:       "Example Name",
+    email:      "email@google.com",
+    first_name: "Marcelo",
+    last_name:  "Jacobus"
   }
 }
 
@@ -29,31 +29,31 @@ OmniAuth.config.mock_auth[:google_oauth2] = {
 # Facebook
 ################################################################################
 OmniAuth.config.mock_auth[:facebook] = {
-  :provider => 'facebook',
-  :uid => '2234567',
-  :info => {
-    :nickname => 'jbloggs',
-    :email => 'email@facebook.com',
-    :name => 'Example Name facebook',
-    :first_name => 'Joe',
-    :last_name => 'Bloggs',
-    :image => '',
-    :urls => { :Facebook => '' },
-    :location => 'some place',
-    :verified => true
+  provider: "facebook",
+  uid:      "2234567",
+  info:     {
+    nickname:   "jbloggs",
+    email:      "email@facebook.com",
+    name:       "Example Name facebook",
+    first_name: "Joe",
+    last_name:  "Bloggs",
+    image:      "",
+    urls:       { Facebook: "" },
+    location:   "some place",
+    verified:   true
   }
 }
 ################################################################################
 # Github
 ################################################################################
 OmniAuth.config.mock_auth[:github] = {
-  provider: 'github',
-  uid: '123458',
+  provider: "github",
+  uid: "123458",
   info: {
-    nickname: "Nick Name",
-    email: nil,
-    name: "Marcelo",
-    image: "https://avatars.githubusercontent.com/u/226834?",
+    nickname:  "Nick Name",
+    email:     nil,
+    name:      "Marcelo",
+    image:     "https:       //avatars.githubusercontent.com/u/226834?",
     urls: {
       GitHub: "https://github.com/mjacobus",
       Blog: "jw.org"
@@ -69,7 +69,7 @@ class OauthHelper
 end
 
 module OauthSpecHelper
-  def stub_omniauth_with(params, origin = '/')
+  def stub_omniauth_with(params, origin = "/")
     # @request.env["devise.mapping"]  = ::Devise.mappings[:user]
     # @request.env["omniauth.auth"]   = params
     # @request.env["omniauth.origin"] = origin
