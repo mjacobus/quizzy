@@ -1,38 +1,20 @@
+require "application/concerns/application_dependencies_aware"
+
 module Web::Controllers::Admin::Quizzes
   class Index
     include Web::Action
+    include Application::Concerns::ApplicationDependenciesAware
+
     expose :quizzes
 
     def call(params)
-      @quizzes = service.all
-
-      # TODO: Use seeds instead
-      create_quizzes if @quizzes.size == 0
+      @quizzes = quiz_service.all
     end
 
     private
 
-    def service
+    def quiz_service
       dependencies.fetch(Quizzy::Quiz::QuizService)
-    end
-
-    # TODO: move to base action
-    # TODO: figure out how to inject dependency rather than using singleton
-    def dependencies
-      Application::Dependencies.instance
-    end
-
-    def create_quizzes
-      (1..10).each do |number|
-        quiz = ::Quizzy::Quiz::Quiz.new
-        quiz.title = "title #{number}"
-        quiz.description = "description #{number}"
-        quiz.private = true
-        quiz.created_at = Time.now.utc
-        quiz.created_at = Time.now.utc
-
-        service.create(quiz)
-      end
     end
   end
 end
