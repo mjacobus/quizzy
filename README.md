@@ -34,6 +34,30 @@ Create your quizzes and share them with the world!
   - twitter
   - github
 
+## Install
+
+```bash
+bundle exec install
+bundle exec lotus db create
+bundle exec lotus db migrate
+ruby db/seed.rb # for creating fake data
+
+# start server
+
+bundle exec lotus server
+```
+
+- [Google login][http://localhost:2300/auth/google_oauth2]
+- [Quiz administration page][http://localhost:2300/admin/quizzes]
+
+```bash
+LOTUS_ENV=test bundle exec lotus db create
+LOTUS_ENV=test bundle exec lotus db migrate
+
+bundle exec exec rake
+```
+
+## Running tests
 
 ## TODO
 - [Next features](https://github.com/mjacobus/quizzy/issues?labels=enhancement&page=1&state=open)
