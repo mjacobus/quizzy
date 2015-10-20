@@ -27,5 +27,7 @@ require "minitest/autorun"
 require 'minitest/unit'
 require 'mocha/mini_test'
 
-Lotus::Application.preload!
+app_path = File.expand_path("../..", __FILE__)
+$LOAD_PATH.unshift(app_path) unless $LOAD_PATH.include?(app_path)
 
+Lotus::Application.preload!

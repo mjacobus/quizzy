@@ -69,9 +69,12 @@ class OauthHelper
 end
 
 module OauthSpecHelper
-  def stub_omniauth_with(params, origin = "/")
-    # @request.env["devise.mapping"]  = ::Devise.mappings[:user]
-    # @request.env["omniauth.auth"]   = params
-    # @request.env["omniauth.origin"] = origin
+  def stub_action_with_oauth(action, provider, origin = "/")
+    env = {
+      "omniauth.auth" => OauthHelper.providers[provider],
+      "omniauth.origin" => origin
+    }
+    request = stub(env: env)
+    action.stubs(:request).returns(request)
   end
 end

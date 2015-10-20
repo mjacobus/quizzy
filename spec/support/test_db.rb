@@ -2,7 +2,7 @@ require "application/dependencies"
 
 class TestDb
   def self.instance
-    @@instance ||= self.new
+    @instance ||= new
   end
 
   def dependencies
@@ -21,5 +21,11 @@ class TestDb
     instance.adapter.transaction(rollback: :always) do
       block.call
     end
+  end
+end
+
+module DbSpecHelper
+  def inside_transaction(&block)
+    TestDb.inside_transaction(&block)
   end
 end
