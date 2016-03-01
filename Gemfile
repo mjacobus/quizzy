@@ -3,9 +3,8 @@ source "https://rubygems.org"
 gem "bundler"
 gem "rake"
 
-gem "lotusrb",     "0.5.0"
-gem "lotus-model", "~> 0.5"
-
+gem "hanami",     "0.7.0"
+gem "hanami-model", "~> 0.6"
 
 gem "mysql2"
 gem "koine-repository", "~> 1.1.1"

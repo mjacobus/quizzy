@@ -1,5 +1,5 @@
 # Require this file for unit tests
-ENV["LOTUS_ENV"] ||= "test"
+ENV["hanami_ENV"] ||= "test"
 
 if ENV["COVERALLS"]
   require "coveralls"
@@ -30,4 +30,4 @@ require 'mocha/mini_test'
 app_path = File.expand_path("../..", __FILE__)
 $LOAD_PATH.unshift(app_path) unless $LOAD_PATH.include?(app_path)
 
-Lotus::Application.preload!
+Hanami::Application.preload!

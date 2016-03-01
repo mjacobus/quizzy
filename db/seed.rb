@@ -1,10 +1,10 @@
-ENV["LOTUS_ENV"] ||= "development"
+ENV["HANAMI_ENV"] ||= "development"
 
 app_path = File.expand_path("../..", __FILE__)
 $LOAD_PATH.unshift(app_path) unless $LOAD_PATH.include?(app_path)
 
 require "config/environment"
-Lotus::Application.preload!
+Hanami::Application.preload!
 require "spec/support/fixtures"
 
 dependencies    = Application::Dependencies.instance

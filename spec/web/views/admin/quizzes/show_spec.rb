@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Web::Views::Admin::Quizzes::Show do
   let(:exposures) { Hash[foo: "bar"] }
-  let(:template)  { Lotus::View::Template.new("apps/web/templates/admin/quizzes/show.html.erb") }
+  let(:template)  { Hanami::View::Template.new("apps/web/templates/admin/quizzes/show.html.erb") }
   let(:view)      { Web::Views::Admin::Quizzes::Show.new(template, exposures) }
   let(:rendered)  { view.render }
 

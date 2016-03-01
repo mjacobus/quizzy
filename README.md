@@ -38,21 +38,21 @@ Create your quizzes and share them with the world!
 
 ```bash
 bundle exec install
-bundle exec lotus db create
-bundle exec lotus db migrate
+bundle exec hanami db create
+bundle exec hanami db migrate
 ruby db/seed.rb # for creating fake data
 
 # start server
 
-bundle exec lotus server
+bundle exec hanami server
 ```
 
 - [Google login][http://localhost:2300/auth/google_oauth2]
 - [Quiz administration page][http://localhost:2300/admin/quizzes]
 
 ```bash
-LOTUS_ENV=test bundle exec lotus db create
-LOTUS_ENV=test bundle exec lotus db migrate
+HANAMI_ENV=test bundle exec hanami db create
+HANAMI_ENV=test bundle exec hanami db migrate
 
 bundle exec exec rake
 ```

@@ -12,7 +12,7 @@ env:
   # - DB=postgresql
 
 script:
-  - LOTUS_ENV=test bundle exec lotus db migrate
+  - HANAMI_ENV=test bundle exec hanami db migrate
   - bundle exec rake test:coveralls
 
 gemfile:
