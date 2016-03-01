@@ -1,0 +1,22 @@
+language: ruby
+rvm:
+  # - 1.9.3
+  # - 2.0.0
+  # - 2.1.0
+  # - 2.1.1
+  - 2.2
+
+env:
+  - DB=mysql
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate
+  - RAILS_ENV=test bundle exec rake test
+
+gemfile:
+  - Gemfile
+
+before_script:
+  - mysql -e 'create database quizzy_test'
+
+sudo: false
