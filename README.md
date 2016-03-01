@@ -45,20 +45,21 @@ ruby db/seed.rb # for creating fake data
 
 # start server
 
-bundle exec hanami server
+rails server
 ```
 
-- [Google login][http://localhost:2300/auth/google_oauth2]
-- [Quiz administration page][http://localhost:2300/admin/quizzes]
+- [Google login](http://localhost:3000/auth/google_oauth2)
+- [Quiz administration page](http://localhost:3000/admin/quizzes)
+
+
+## Running tests
 
 ```bash
-HANAMI_ENV=test bundle exec hanami db create
-HANAMI_ENV=test bundle exec hanami db migrate
+RAILS_ENV=test bundle exec db:create db:migrate
 
 bundle exec exec rake
 ```
 
-## Running tests
 
 ## TODO
 - [Next features](https://github.com/mjacobus/quizzy/issues?labels=enhancement&page=1&state=open)
