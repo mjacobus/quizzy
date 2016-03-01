@@ -22,7 +22,7 @@ end
 if ENV["COVERAGE"]
   require "simplecov"
 
-  SimpleCov.start do
+  SimpleCov.start 'rails' do
     add_filter "/spec/"
     add_filter "/test/"
     add_group "Lib", "lib"
