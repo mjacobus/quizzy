@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+require "./test/support/fixtures"
+
+dependencies    = Application::Dependencies.instance
+user_repository = dependencies.fetch("Quizzy::User::UserRepository")
+fixtures        = Fixtures.new
+
+fixtures.create_user
+
+user_repository.find_all_by({}).each do |user|
+  (1..10).each do
+    fixtures.create_quiz(user_id: user.id)
+  end
+end

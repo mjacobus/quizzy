@@ -1,5 +1,16 @@
 source 'https://rubygems.org'
 
+gem 'koine-repository'
+gem "koine-command_bus"
+gem "koine-event_manager"
+gem "nurse-rb"
+
+gem "omniauth"
+gem "omniauth-oauth2"
+gem "omniauth-facebook"
+gem "omniauth-google_oauth2"
+gem "omniauth-github"
+gem "omniauth-twitter"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
@@ -35,6 +46,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'mocha'
 end
 
 group :development do
@@ -44,4 +56,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
