@@ -6,11 +6,12 @@ gem "koine-event_manager"
 gem "nurse-rb"
 
 gem "omniauth"
-gem "omniauth-oauth2"
-gem "omniauth-facebook"
+# https://github.com/intridea/omniauth-oauth2/issues/81#issuecomment-195474642
+gem "omniauth-oauth2", "~> 1.1.2"
+# gem "omniauth-facebook"
 gem "omniauth-google_oauth2"
-gem "omniauth-github"
-gem "omniauth-twitter"
+# gem "omniauth-github"
+# gem "omniauth-twitter"
 gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
