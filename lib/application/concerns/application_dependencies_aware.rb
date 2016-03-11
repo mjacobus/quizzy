@@ -2,8 +2,8 @@ module Application
   module Concerns
     module ApplicationDependenciesAware
 
-      def login_service
-        @login_service ||= create_auth_service
+      def auth_service
+        @auth_service ||= create_auth_service
       end
 
       def user_service

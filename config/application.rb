@@ -26,7 +26,9 @@ module Quizzy
     config.autoload_paths << "#{Rails.root}/lib"
 
     config.middleware.tap do |middleware|
-      middleware.use OmniAuth::Strategies::GoogleOAuth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+      middleware.use OmniAuth::Builder do
+        provider OmniAuth::Strategies::GoogleOAuth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+      end
     end
   end
 end
