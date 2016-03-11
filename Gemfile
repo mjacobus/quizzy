@@ -11,6 +11,7 @@ gem "omniauth-facebook"
 gem "omniauth-google_oauth2"
 gem "omniauth-github"
 gem "omniauth-twitter"
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
