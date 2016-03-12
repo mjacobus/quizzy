@@ -8,7 +8,7 @@ module Application
         )
         repository = Quizzy::User::UserRepository.new(adapter)
         repository.hydrator         = Koine::Hydrator::Hydrator.new
-        repository.entity_prototype = Quizzy::User::User.new
+        repository.entity_prototype = Quizzy::Domain::User.new
         repository
       end
     end

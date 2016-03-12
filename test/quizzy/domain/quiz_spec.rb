@@ -1,19 +1,15 @@
 require "test_helper"
 
-require "quizzy/user/user"
-
-describe Quizzy::User::User do
-  subject { Quizzy::User::User.new }
+describe Quizzy::Domain::Quiz do
+  subject { Quizzy::Domain::Quiz.new }
 
   properties = [
     :id,
-    :name,
-    :email,
-    :provider,
-    :uid,
+    :title,
+    :description,
+    :private,
     :created_at,
     :updated_at,
-    :provider_data,
   ]
 
   properties.each do |property|

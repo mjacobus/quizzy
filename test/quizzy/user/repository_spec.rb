@@ -9,7 +9,7 @@ module Quizzy::User
     describe "#create" do
       it "creates a user" do
         TestDb.inside_transaction do
-          entity = User.new
+          entity = Quizzy::Domain::User.new
 
           entity.uid = "uid"
           entity.provider = "google"
