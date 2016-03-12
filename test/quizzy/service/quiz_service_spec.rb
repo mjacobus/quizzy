@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe Quizzy::Quiz::QuizService do
+describe Quizzy::Service::QuizService do
   let(:repository) { Minitest::Mock.new }
-  let(:service) { Quizzy::Quiz::QuizService.new(repository) }
+  let(:service) { Quizzy::Service::QuizService.new(repository) }
 
   describe "#all" do
     it "returns all records" do

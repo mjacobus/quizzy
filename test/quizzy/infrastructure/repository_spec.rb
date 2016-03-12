@@ -1,15 +1,15 @@
 require "test_helper"
-require "quizzy/user/user_repository"
+require "quizzy/infrastructure/user_repository"
 require "support/test_db"
 
-module Quizzy::User
+module Quizzy::Infrastructure
   describe UserRepository do
     let(:repository) { TestDb.instance.repository(UserRepository) }
 
     describe "#create" do
       it "creates a user" do
         TestDb.inside_transaction do
-          entity = User.new
+          entity = Quizzy::Domain::User.new
 
           entity.uid = "uid"
           entity.provider = "google"

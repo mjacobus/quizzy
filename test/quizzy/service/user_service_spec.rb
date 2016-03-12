@@ -1,8 +1,8 @@
 require "test_helper"
-require "quizzy/user/user_service"
-require "quizzy/user/user"
+require "quizzy/service/user_service"
+require "quizzy/domain/user"
 
-module Quizzy::User
+module Quizzy::Service
   describe UserService do
     let(:repository) { stub }
     let(:service) { UserService.new(repository) }
@@ -10,7 +10,7 @@ module Quizzy::User
     describe "#find_or_create_by_oauth" do
 
       it "returns the user" do
-        user = User.new
+        user = Quizzy::Domain::User.new
         oauth = mock(uid: "123", provider: "google")
         repository.expects(:find_one_by).with({ uid: "123", provider: "google" }).returns(user)
 
@@ -19,8 +19,8 @@ module Quizzy::User
         returned.must_be_same_as(user)
       end
 
-      it "creates a new user when" do
-        user = User.new
+      it "creates a new user when user does not exist" do
+        user = Quizzy::Domain::User.new
 
         data = {
           uid: "123",
@@ -37,7 +37,7 @@ module Quizzy::User
           with(uid: "123", provider: "google").returns(nil)
 
         repository.expects(:create).with(user) do |value|
-          value.is_a?(User)
+          value.is_a?(Quizzy::Domain::User)
         end
 
         created_user = service.find_or_create_by_oauth(oauth)

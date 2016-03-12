@@ -1,5 +1,5 @@
 module Quizzy
-  module User
+  module Service
     class UserService
       def initialize(repository)
         @repository = repository
@@ -14,7 +14,7 @@ module Quizzy
       private
 
       def create_user_by_oauth(oauth)
-        user               = User.new
+        user               = Quizzy::Domain::User.new
         user.provider_data = oauth.provider_data
         user.provider      = oauth.provider
         user.uid           = oauth.uid

@@ -1,5 +1,5 @@
 module Quizzy
-  module Quiz
+  module Domain
     class Quiz
       attr_accessor :id
       attr_accessor :title

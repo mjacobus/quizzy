@@ -1,7 +1,7 @@
 require "test_helper"
 
-describe Quizzy::Quiz::QuizRepository do
-  let(:repository) { Quizzy::Quiz::QuizRepository.new(stub) }
+describe Quizzy::Infrastructure::QuizRepository do
+  let(:repository) { Quizzy::Infrastructure::QuizRepository.new(stub) }
 
   it "extends Koine::Repository::Repository" do
     repository.is_a?(Koine::Repository::Repository).must_equal true
@@ -11,5 +11,4 @@ describe Quizzy::Quiz::QuizRepository do
     repository.class.ancestors.include?(Koine::Repository::Repository::IdAwareEntity).
       must_equal true
   end
-
 end

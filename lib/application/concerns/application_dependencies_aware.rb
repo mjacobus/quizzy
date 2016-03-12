@@ -7,7 +7,7 @@ module Application
       end
 
       def user_service
-        @user_service ||= dependencies.fetch("Quizzy::User::UserService")
+        @user_service ||= dependencies.fetch("Quizzy::Service::UserService")
       end
 
       def dependencies

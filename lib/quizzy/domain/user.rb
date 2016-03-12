@@ -1,5 +1,5 @@
 module Quizzy
-  module User
+  module Domain
     class User
       attr_accessor :id
       attr_accessor :email

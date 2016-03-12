@@ -32,7 +32,7 @@ class SessionsControllerTest < ActionController::TestCase
     auth_service = stub
     user_service = stub
 
-    oauth = Quizzy::Auth::Oauth.new(request.env)
+    oauth = Quizzy::Infrastructure::Oauth.new(request.env)
 
     user_service.expects(:find_or_create_by_oauth).with do |param|
       param.origin == oauth.origin

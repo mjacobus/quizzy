@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    oauth = Quizzy::Auth::Oauth.new(request.env)
+    oauth = Quizzy::Infrastructure::Oauth.new(request.env)
     user = user_service.find_or_create_by_oauth(oauth)
     auth_service.login(user)
 

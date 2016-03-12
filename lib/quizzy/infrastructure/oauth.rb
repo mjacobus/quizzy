@@ -1,5 +1,5 @@
 module Quizzy
-  module Auth
+  module Infrastructure
     class Oauth
       def initialize(env)
         @env = env
