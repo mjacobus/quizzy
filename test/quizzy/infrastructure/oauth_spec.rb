@@ -1,6 +1,6 @@
 require "test_helper"
 
-module Quizzy::Auth
+module Quizzy::Infrastructure
   describe Oauth do
     let(:env) do
       {
