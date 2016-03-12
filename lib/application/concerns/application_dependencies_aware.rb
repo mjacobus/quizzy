@@ -17,8 +17,10 @@ module Application
       private
 
       def create_auth_service
-        dependencies.define(:http_session) do
-          session
+        unless dependencies.defined?(:http_session)
+          dependencies.define(:http_session) do
+            session
+          end
         end
 
         dependencies.fetch("Application::Auth::SessionLoginService")
