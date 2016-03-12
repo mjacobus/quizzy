@@ -1,8 +1,8 @@
 require "test_helper"
-require "quizzy/user/user_repository"
+require "quizzy/infrastructure/user_repository"
 require "support/test_db"
 
-module Quizzy::User
+module Quizzy::Infrastructure
   describe UserRepository do
     let(:repository) { TestDb.instance.repository(UserRepository) }
 

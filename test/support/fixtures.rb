@@ -11,7 +11,7 @@ class Fixtures
       updated_at: Time.now.utc,
     }.merge(params)
 
-    create(params, "Quizzy::User::UserRepository")
+    create(params, "Quizzy::Infrastructure::UserRepository")
   end
 
   def create_quiz(params = {})
@@ -25,7 +25,7 @@ class Fixtures
       updated_at: Time.now.utc,
     }.merge(params)
 
-    create(params, "Quizzy::Quiz::QuizRepository")
+    create(params, "Quizzy::Infrastructure::QuizRepository")
   end
 
   def create(params, repository_key)

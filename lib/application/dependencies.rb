@@ -34,7 +34,7 @@ module Application
     # Quizzy::Quiz module
     #
     def initialize_quiz_module
-      define("Quizzy::Quiz::QuizRepository") do |di|
+      define("Quizzy::Infrastructure::QuizRepository") do |di|
         # testable factory
         require "application/factories/quiz_repository_factory"
         Application::Factories::QuizRepositoryFactory.new.create_service(di)
@@ -50,7 +50,7 @@ module Application
     # Quizzy::User module
     #
     def initialize_user_module
-      define("Quizzy::User::UserRepository") do |di|
+      define("Quizzy::Infrastructure::UserRepository") do |di|
         require "application/factories/user_repository_factory"
         Application::Factories::UserRepositoryFactory.new.create_service(di)
       end

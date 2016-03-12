@@ -10,7 +10,7 @@
 require "./test/support/fixtures"
 
 dependencies    = Application::Dependencies.instance
-user_repository = dependencies.fetch("Quizzy::User::UserRepository")
+user_repository = dependencies.fetch("Quizzy::Infrastructure::UserRepository")
 fixtures        = Fixtures.new
 
 fixtures.create_user
