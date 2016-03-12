@@ -40,7 +40,7 @@ module Application
         Application::Factories::QuizRepositoryFactory.new.create_service(di)
       end
 
-      define("Quizzy::Quiz::QuizService") do |di|
+      define("Quizzy::Service::QuizService") do |di|
         require "application/factories/quiz_service_factory"
         Application::Factories::QuizServiceFactory.new.create_service(di)
       end
@@ -55,7 +55,7 @@ module Application
         Application::Factories::UserRepositoryFactory.new.create_service(di)
       end
 
-      define("Quizzy::User::UserService") do |di|
+      define("Quizzy::Service::UserService") do |di|
         require "application/factories/user_service_factory"
         Application::Factories::UserServiceFactory.new.create_service(di)
       end

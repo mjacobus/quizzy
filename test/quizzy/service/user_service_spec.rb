@@ -1,8 +1,8 @@
 require "test_helper"
-require "quizzy/user/user_service"
+require "quizzy/service/user_service"
 require "quizzy/domain/user"
 
-module Quizzy::User
+module Quizzy::Service
   describe UserService do
     let(:repository) { stub }
     let(:service) { UserService.new(repository) }

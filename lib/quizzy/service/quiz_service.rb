@@ -1,5 +1,5 @@
 module Quizzy
-  module Quiz
+  module Service
     class QuizService
       def initialize(repository)
         @repository = repository
