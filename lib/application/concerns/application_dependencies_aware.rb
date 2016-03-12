@@ -2,8 +2,8 @@ module Application
   module Concerns
     module ApplicationDependenciesAware
 
-      def login_service
-        @login_service ||= create_auth_service
+      def auth_service
+        @auth_service ||= create_auth_service
       end
 
       def user_service
@@ -17,8 +17,10 @@ module Application
       private
 
       def create_auth_service
-        dependencies.define(:http_session) do
-          session
+        unless dependencies.defined?(:http_session)
+          dependencies.define(:http_session) do
+            session
+          end
         end
 
         dependencies.fetch("Application::Auth::SessionLoginService")

@@ -1,0 +1,9 @@
+<%
+providers = {
+  "google_oauth2" => "Google",
+}
+%>
+
+<%  providers.each do |provider, provider_name| %>
+  <%= link_to(provider_name, "/auth/#{provider}") %>
+<% end %>

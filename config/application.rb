@@ -24,5 +24,11 @@ module Quizzy
     config.active_record.raise_in_transactional_callbacks = true
 
     config.autoload_paths << "#{Rails.root}/lib"
+
+    config.middleware.tap do |middleware|
+      middleware.use OmniAuth::Builder do
+        provider OmniAuth::Strategies::GoogleOAuth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+      end
+    end
   end
 end

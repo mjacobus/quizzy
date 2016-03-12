@@ -2,11 +2,17 @@
 <html>
 <head>
   <title>Quizzy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- some weirdness is happening here -->
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <% if current_user %>
+    <div><%= current_user.name %></div>
+    <div><%= link_to(t('session.logout'), logout_path) %></div>
+  <% end %>
 
 <%= yield %>
 
