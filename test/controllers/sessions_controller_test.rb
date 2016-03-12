@@ -15,6 +15,16 @@ class SessionsControllerTest < ActionController::TestCase
     assert_redirected_to url
   end
 
+  test "can logout" do
+    auth_service = stub
+    auth_service.expects(:logout)
+
+    @controller.stubs(:auth_service).returns(auth_service)
+
+    get :destroy
+    assert_redirected_to root_url
+  end
+
   private
 
   def make_request

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get "/auth/:provider/callback", to: "sessions#create"
-  get "/auth/signout", to: "sessions#destroy"
+  get "/auth/signout", to: "sessions#destroy", as: :logout
   get "/auth/failure", to: "sessions#failure"
 
   # The priority is based upon order of creation: first created -> highest priority.

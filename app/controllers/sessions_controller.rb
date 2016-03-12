@@ -9,8 +9,11 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    auth_service.logout
+    redirect_to root_url
   end
 
   def failure
+    redirect_to root_url
   end
 end
